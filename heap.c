@@ -53,7 +53,40 @@ void heap_pop(Heap* pq){
     return;
   }
 
-  
+  if (pq->size == 1) {
+    pq->size = 0;
+    return;
+  }
+
+  pq->heapArray[0] = pq->heapArray[pq->size - 1];
+  pq->size--;
+
+  int indice = 0;
+
+  while(1) {
+    int indicePrimerHijo = indice * 2 + 1;
+    int indiceSegundoHijo = indice * 2 + 2;
+    int indiceHijoMayor = indice;
+
+    if() {
+      
+    }
+
+    if() {
+      
+    }
+
+    if(indiceHijoMayor == indice) {
+      break;
+    }
+
+    heapElem tempElemHeapArray = pq->heapArray[indice];
+    pq->heapArray[indice] = pq->heapArray[indiceHijoMayor];
+    pq->heapArray[indiceHijoMayor] = tempElemHeapArray;
+
+    indice = indiceHijoMayor;
+    
+  }
 }
 
 Heap* createHeap(){
