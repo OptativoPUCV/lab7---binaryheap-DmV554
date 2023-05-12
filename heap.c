@@ -30,19 +30,21 @@ void heap_push(Heap* pq, void* data, int priority){
       pq->heapArray = realloc(pq->heapArray, sizeof(heapElem) * pq->capac);
     }
 
-  int indiceUltimoElemento = pq->size;
-  pq->heapArray[indiceUltimoElemento].data = data;
-  pq->heapArray[indiceUltimoElemento].priority = priority;
+    int indiceUltimoElemento = pq->size;
+    pq->heapArray[indiceUltimoElemento].data = data;
+    pq->heapArray[indiceUltimoElemento].priority = priority;
+  
+    pq->size++;
 
-  pq->size++;
-
-  while(indiceUltimoElemento > 0 && pq->heapArray[indiceUltimoElemento].priority > pq->heapArray[(indiceUltimoElemento -1) / 2].priority) { 
-  heapElem tempElemHeapArray = pq->heapArray[indiceUltimoElemento];
-  pq->heapArray[indiceUltimoElemento] = pq->heapArray[(indiceUltimoElemento -1) / 2];
-  pq->heapArray[(indiceUltimoElemento -1) / 2] = tempElemHeapArray;
-
-  indiceUltimoElemento = (indiceUltimoElemento - 1) / 2;
-}
+    int indice = indiceUltimoElemento;
+  
+    while(indice > 0 && pq->heapArray[indice].priority > pq->heapArray[(indice -1) / 2].priority) { 
+      heapElem tempElemHeapArray = pq->heapArray[indice];
+      pq->heapArray[indice] = pq->heapArray[(indice -1) / 2];
+      pq->heapArray[(indice -1) / 2] = tempElemHeapArray;
+    
+      indice = (indice - 1) / 2;
+    }
 }
 
 
