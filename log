@@ -112,3 +112,14 @@ heap.c:84:42: error: ‘indiceHijoMayor’ may be used uninitialized in this fun
 cc1: all warnings being treated as errors
 Compilation failed
 d822d10
+Fri 12 May 2023 01:48:20 AM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:84:42: error: ‘indiceHijoMayor’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   84 |     pq->heapArray[indice] = pq->heapArray[indiceHijoMayor];
+      |                                          ^
+cc1: all warnings being treated as errors
+Compilation failed
+a9b17c9
