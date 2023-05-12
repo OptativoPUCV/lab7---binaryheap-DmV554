@@ -123,3 +123,9 @@ heap.c:84:42: error: ‘indiceHijoMayor’ may be used uninitialized in this fun
 cc1: all warnings being treated as errors
 Compilation failed
 a9b17c9
+Fri 12 May 2023 01:50:19 AM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  7|1
+total_score: 50/70
+cee1a4c
