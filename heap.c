@@ -68,11 +68,11 @@ void heap_pop(Heap* pq){
     int indiceSegundoHijo = indice * 2 + 2;
     int indiceHijoMayor = indice;
 
-    if(indicePrimerHijo < pq->size && pq->heapArray[indicePrimerHijo].priority > pq->heapArray[indice].priority) {
+    if(indicePrimerHijo < pq->size && pq->heapArray[indicePrimerHijo].priority > pq->heapArray[indiceHijoMayor].priority) {
       indiceHijoMayor = indicePrimerHijo;
     }
 
-    if(indiceSegundoHijo < pq->size && pq->heapArray[indiceSegundoHijo].priority > pq->heapArray[indice].priority) {
+    if(indiceSegundoHijo < pq->size && pq->heapArray[indiceSegundoHijo].priority > pq->heapArray[indiceHijoMayor].priority) {
       indiceHijoMayor = indiceSegundoHijo;
     }
 
